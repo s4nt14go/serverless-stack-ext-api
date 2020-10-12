@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "aws-sdk": "^2.541.0",
+    "http-proxy": "^1.18.1",
     "serverless-bundle": "^1.2.5",
     "serverless-offline": "^5.12.0"
   },
