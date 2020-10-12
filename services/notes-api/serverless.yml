@@ -3,6 +3,7 @@ service: notes-app-ext-notes-api
 plugins:
   - serverless-bundle
   - serverless-offline
+  - serverless-dotenv-plugin # Load .env as environment variables
 
 custom: ${file(../../serverless.common.yml):custom}
 
