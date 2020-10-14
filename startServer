@@ -53,7 +53,7 @@ function urlMatchRoute(url, route) {
     const routePart = routeParts[i];
 
     // Case 1: If either part is undefined => not match
-    if (urlPart === undefined || routePart === undefined) {
+    if ((urlPart === undefined && routePart !== '*') || routePart === undefined) {
       return false;
     }
 
@@ -71,6 +71,7 @@ function urlMatchRoute(url, route) {
     if (routePart.startsWith("{")) {
       continue;
     }
+    return false;
   }
 
   return true;
