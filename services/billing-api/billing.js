@@ -29,6 +29,7 @@ export async function main(event, context) {
       currency: "usd"
     });
   } catch (e) {
+    console.log('Error when trying to charge', e);
     return failure({ message: e.message });
   }
 
