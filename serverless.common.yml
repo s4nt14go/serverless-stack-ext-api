@@ -5,6 +5,7 @@ custom:
   sstAppMapping:
     prod: prod
     dev: dev
+    work: work
   sstApp: ${self:custom.sstAppMapping.${self:custom.stage}, self:custom.sstAppMapping.dev}-notes-ext-infra
 
 lambdaPolicyXRay:
