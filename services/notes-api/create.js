@@ -2,8 +2,10 @@ import uuid from "uuid";
 import dynamoDb from "../../libs/dynamodb-lib";
 import { success, failure } from "../../libs/response-lib";
 
-export async function main(event, context) {
+export async function main(event, _context) {
   const data = JSON.parse(event.body);
+  console.log('event.requestContext.identity.cognitoIdentityId', event.requestContext.identity.cognitoIdentityId);
+  console.log('event', event);
   const params = {
     TableName: process.env.tableName,
     Item: {

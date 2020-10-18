@@ -1,7 +1,10 @@
 import dynamoDb from "../../libs/dynamodb-lib";
 import { success, failure } from "../../libs/response-lib";
 
-export async function main(event, context) {
+export async function main(event, _context) {
+  console.log('event', event);
+  console.log('process.env', process.env);
+  console.log('process.env.tableName', process.env.tableName);
   const params = {
     TableName: process.env.tableName,
     // 'KeyConditionExpression' defines the condition for the query
@@ -19,8 +22,10 @@ export async function main(event, context) {
   try {
     const result = await dynamoDb.query(params);
     // Return the matching list of items in response body
+    console.log('result', result);
     return success(result.Items);
   } catch (e) {
+    console.log('e', e);
     return failure({ status: false });
   }
 }

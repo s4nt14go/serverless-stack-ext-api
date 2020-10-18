@@ -24,6 +24,7 @@ provider:
   environment:
     stage: ${self:custom.stage}
     tableName: !ImportValue ${self:custom.sstApp}-ExtTableName
+#    tableName: work-notes-ext-infra-dynamodb-TableCD117FA1-WV26HGC1UT0G
 
   iamRoleStatements:
     - ${file(../../serverless.common.yml):lambdaPolicyXRay}
