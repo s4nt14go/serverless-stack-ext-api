@@ -1,8 +1,8 @@
 import AWS from "../../libs/aws-sdk";
 import stripePackage from "stripe";
 import { calculateCost } from "./libs/billing-lib";
-import { success, failure } from "../../libs/response-lib";
 import config from "../../config";
+import handler from "../../libs/handler-lib";
 
 // Load our secret key from SSM
 const ssm = new AWS.SSM();
@@ -13,7 +13,7 @@ const stripeSecretKeyPromise = ssm
   })
   .promise();
 
-export async function main(event, context) {
+export const main = handler(async (event, _context) => {
   const { storage, source } = JSON.parse(event.body);
   const amount = calculateCost(storage);
   const description = "Scratch charge";
@@ -21,17 +21,12 @@ export async function main(event, context) {
   // Charge via stripe
   const stripeSecretKey = await stripeSecretKeyPromise;
   const stripe = stripePackage(stripeSecretKey.Parameter.Value);
-  try {
-    await stripe.charges.create({
-      source,
-      amount,
-      description,
-      currency: "usd"
-    });
-  } catch (e) {
-    console.log('Error when trying to charge', e);
-    return failure({ message: e.message });
-  }
+  await stripe.charges.create({
+    source,
+    amount,
+    description,
+    currency: "usd"
+  });
 
   // Send verification message
   const sns = new AWS.SNS();
@@ -43,5 +38,5 @@ export async function main(event, context) {
     })
     .promise();
 
-  return success({ status: true });
-}
+  return { status: true };
+});

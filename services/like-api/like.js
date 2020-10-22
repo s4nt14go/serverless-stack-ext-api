@@ -1,7 +1,7 @@
-import { success } from "../../libs/response-lib";
+import handler from "../../libs/handler-lib";
 
-export async function main(event, context) {
+export const main = handler(async (_event, _context) => {
   // Business logic code for liking a post
 
-  return success({ status: true });
-}
+  return { status: true };
+});

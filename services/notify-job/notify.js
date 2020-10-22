@@ -1,7 +1,8 @@
 import AWS from "../../libs/aws-sdk";
 import config from "../../config";
+import handler from "../../libs/handler-lib";
 
-export async function main(event, context) {
+export const main = handler(async (event, _context) => {
   // Parse SNS data
   const { amount, description } = JSON.parse(event.Records[0].Sns.Message);
 
@@ -14,4 +15,4 @@ export async function main(event, context) {
     .promise();
 
   return { status: true };
-}
+});
