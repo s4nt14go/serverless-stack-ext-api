@@ -7,6 +7,9 @@ custom:
     dev: dev
     work: work
   sstApp: ${self:custom.sstAppMapping.${self:custom.stage}, self:custom.sstAppMapping.dev}-notes-ext-infra
+  apiGatewayThrottling:
+    maxRequestsPerSecond: 10
+    maxConcurrentRequests: 5
 
 lambdaPolicyXRay:
   Effect: Allow
