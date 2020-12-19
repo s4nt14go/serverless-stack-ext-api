@@ -57,10 +57,9 @@ functions:
       - http:
           path: notes
           method: post
-          # Have to set-up throttling again to be picked-up, "throttling" line should be right after "method" line
+          # Have to set-up throttling again here (apart from serverless.common.yml for other services endpoints) to be picked-up, "throttling" line should the next line after "method" line
           throttling: # Will trigger "warning at 'functions.create.events[0].http': unrecognized property 'throttling'", but throttling is set ok
             maxRequestsPerSecond: 10
-            maxConcurrentRequests: 5
           cors: true
           authorizer: aws_iam
 
@@ -75,7 +74,6 @@ functions:
           method: get
           throttling:
             maxRequestsPerSecond: 10
-            maxConcurrentRequests: 5
           cors: true
           authorizer: aws_iam
 
@@ -90,7 +88,6 @@ functions:
           method: get
           throttling:
             maxRequestsPerSecond: 10
-            maxConcurrentRequests: 5
           cors: true
           authorizer: aws_iam
 
@@ -105,7 +102,6 @@ functions:
           method: put
           throttling:
             maxRequestsPerSecond: 10
-            maxConcurrentRequests: 5
           cors: true
           authorizer: aws_iam
 
@@ -120,7 +116,6 @@ functions:
           method: delete
           throttling:
             maxRequestsPerSecond: 10
-            maxConcurrentRequests: 5
           cors: true
           authorizer: aws_iam
 
