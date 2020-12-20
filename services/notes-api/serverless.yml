@@ -57,8 +57,7 @@ functions:
       - http:
           path: notes
           method: post
-          # Have to set-up throttling again here (apart from serverless.common.yml for other services endpoints) to be picked-up, "throttling" line should the next line after "method" line
-          throttling: # Will trigger "warning at 'functions.create.events[0].http': unrecognized property 'throttling'", but throttling is set ok
+          throttling:
             maxRequestsPerSecond: 10
           cors: true
           authorizer: aws_iam
