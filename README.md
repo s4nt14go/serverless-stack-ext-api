@@ -1,4 +1,4 @@
-Backend [Serverless Stack](https://serverless-stack.com) tutorial done, including Best Practices & Extra Credit.
+Backend [Serverless Stack](https://serverless-stack.com) tutorial done, including Best Practices & Extra Credit. 
 
 Actually the backend consists of:
 
