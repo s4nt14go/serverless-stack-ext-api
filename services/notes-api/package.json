@@ -1,10 +1,11 @@
 {
-  "name": "notes-app-ext-notes",
+  "name": "sst-guide-ext-api-notes",
   "version": "1.0.0",
   "description": "",
   "main": "create.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "../../node_modules/.bin/serverless deploy",
+    "remove": "../../node_modules/.bin/serverless remove"
   },
   "keywords": [],
   "author": "",

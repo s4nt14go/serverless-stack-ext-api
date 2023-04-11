@@ -1,0 +1,11 @@
+{
+  "name": "sst-guide-ext-api-like",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "deploy": "../../node_modules/.bin/serverless deploy",
+    "remove": "../../node_modules/.bin/serverless remove"
+  },
+  "author": "",
+  "license": "ISC"
+}

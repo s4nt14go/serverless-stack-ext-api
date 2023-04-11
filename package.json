@@ -1,5 +1,5 @@
 {
-  "name": "serverless-stack-demo-ext-api",
+  "name": "sst-guide-ext-api",
   "version": "1.0.0",
   "description": "[Serverless Stack](https://serverless-stack.com) is a free comprehensive guide to creating full-stack serverless applications. We create a [note taking app](https://demo2.serverless-stack.com) from scratch.",
   "main": "config.js",
@@ -9,6 +9,7 @@
   "devDependencies": {
     "aws-sdk": "^2.541.0",
     "http-proxy": "^1.18.1",
+    "serverless": "^2.72.3",
     "serverless-api-gateway-throttling": "^1.1.0",
     "serverless-bundle": "^1.2.5",
     "serverless-offline": "^5.12.0"

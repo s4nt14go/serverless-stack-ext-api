@@ -1,4 +1,5 @@
 custom:
+  project: sst-guide-ext-api
   # Our stage is based on what is passed in when running serverless
   # commands. Or falls back to what we have set in the provider section.
   stage: ${opt:stage, self:provider.stage}
@@ -6,7 +7,7 @@ custom:
     prod: prod
     dev: dev
     work: work
-  sstApp: ${self:custom.sstAppMapping.${self:custom.stage}, self:custom.sstAppMapping.dev}-notes-ext-infra
+  sstApp: ${self:custom.sstAppMapping.${self:custom.stage}, self:custom.sstAppMapping.dev}-sst-guide-ext-resources
   apiGatewayThrottling:
     maxRequestsPerSecond: 10
 

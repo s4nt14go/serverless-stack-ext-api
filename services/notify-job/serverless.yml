@@ -1,4 +1,4 @@
-service: notes-app-ext-notify-job
+service: sst-guide-ext-api-notify
 
 plugins:
   - serverless-bundle
@@ -11,6 +11,12 @@ package:
 provider:
   name: aws
   runtime: nodejs12.x
+  stackTags:
+    project: ${self:custom.project}
+    stack: ${self:service}
+  tags:
+    project: ${self:custom.project}
+    stack: ${self:service}
   stage: dev
   region: us-east-1
   environment:
