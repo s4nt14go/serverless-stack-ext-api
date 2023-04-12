@@ -1,4 +1,5 @@
 ## Backend [SST guide](https://sst.dev/guide.html)
+[![Seed Status](https://api.seed.run/s4nt14go/serverless-stack-ext-api/stages/prod/build_badge)](https://console.seed.run/s4nt14go/serverless-stack-ext-api)
 
 This implementation is based on an SST guide extended version which included chapters "Best Practices" and "Extra Credit". 
 
