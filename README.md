@@ -26,7 +26,7 @@ For deployment, you need to deploy first [Infrastructure](https://github.com/s4n
 </p>
 <br />
 
-If deploying is handled by [seed](https://seed.run), it will detect the `serverless.yml` files in each folder and deploy them in the selected order. If you want to make the deployment by yourselves for development, do as follows. 
+If you want to make the deployment from your local machine for development, do as follows. 
 
 Install dependencies and deploy `services/notes-api`:  
 ```
@@ -61,3 +61,59 @@ npm run deploy
 ```
 
 > For the cleanup, delete the serverless projects in reverse order.
+
+### SEED walkthrough
+
+[SEED](https://seed.run) is used for the deployment pipeline, here follows a walkthrough of the configuration steps
+
+<p align="center">
+    <img alt="deploy phases" src="doc/01addAnewApp.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/02addAservice.png" />
+</p>
+
+We use an account for `dev` and a different one for `prod`:
+
+<p align="center">
+    <img alt="deploy phases" src="doc/03configureTheStages.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/04stages.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/05addAservice.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/06addAservice.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/07addAservice.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/08addAservice.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/09addAservice.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/10deployPhases.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/11stages.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/12deployDev.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/13promoteToProd1.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/14promoteToProd2.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/15promoteToProd3.png" />
+</p>
+<p align="center">
+    <img alt="deploy phases" src="doc/16prodPromoted.png" />
+</p>
